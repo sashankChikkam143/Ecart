@@ -1,0 +1,83 @@
+.container
+{
+    width: 40%;
+    height: 400px;
+    box-shadow: 5px 5px 6px #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+:host{
+    display: flex;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    font-weight: bold;
+}
+.header{
+    border-bottom: 1px #fff;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding-left: 40%;
+    padding-right: 20%;
+    font-size: 20px;
+}
+
+.content
+{
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.actions{
+    display: flex;
+    justify-content: flex-end;
+    height: 70px;
+    padding: 20px;
+    gap: 30px;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
